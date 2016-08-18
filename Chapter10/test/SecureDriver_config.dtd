@@ -1,0 +1,49 @@
+<!--
+    Typical usage:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE connectionServer SYSTEM "SecureDriver_config.dtd">
+
+    <connectionServer>
+    ...
+    </connectionServer>
+-->
+
+  <!-- Root Element -->
+  <!-- If no keystore is specified, the cacerts file is used-->
+  <!ELEMENT connectionServer (dataSources,include?)>
+  <!ATTLIST connectionServer
+    id CDATA "SecureServer"
+    keystore CDATA #IMPLIED
+    authclient CDATA "true"
+  >
+
+  <!-- Datasource collection -->
+  <!ELEMENT dataSources (dataSource)*>
+
+  <!-- A datasource -->
+  <!ELEMENT dataSource (driver,url,username?,password?,login*)>
+  <!ATTLIST dataSource
+    id CDATA #IMPLIED
+    loginRequired CDATA "true"
+  >
+
+  <!-- The class -->
+  <!ELEMENT driver (#PCDATA)>
+
+  <!-- The url to the database -->
+  <!ELEMENT url (#PCDATA)>
+
+  <!-- The database username -->
+  <!ELEMENT username (#PCDATA)>
+
+  <!-- The database password -->
+  <!ELEMENT password (#PCDATA)>
+
+  <!-- Optional username and password requirements for datasource -->
+  <!ELEMENT login (username, password)>
+
+  <!-- Include content from another file -->
+  <!ELEMENT include (#PCDATA)>
+

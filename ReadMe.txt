@@ -1,0 +1,3 @@
+The information held in this download is provided without warranty, either express or implied.  Neither the authors, Wrox Press, nor its dealers or distributors will be held liable for any damages caused or alleged to be caused either directly or indirectly by the contents of this download.
+
+Some of the contents of this download are also subject to further licensing restrictions.  Please read the appropriate files that can be found in the relevant directories.

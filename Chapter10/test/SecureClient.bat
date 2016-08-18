@@ -1,0 +1,1 @@
+java -Djava.security.policy=SecureClient.policy -Djavax.net.ssl.trustStore=databaseClientKeyStore -Djavax.net.ssl.keyStore=databaseClientKeyStore -Djavax.net.ssl.keyStorePassword=databaseClient -cp .;SecureDriverClient.jar JDBCTest

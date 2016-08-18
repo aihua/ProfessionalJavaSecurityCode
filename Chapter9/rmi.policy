@@ -1,0 +1,6 @@
+// Permissions for RMI.
+// Change "localhost" for remote connections.
+grant codeBase "file:." {
+	permission java.net.SocketPermission "localhost:1024-", "connect";
+	permission java.net.SocketPermission "ebi:1024-", "connect";
+};

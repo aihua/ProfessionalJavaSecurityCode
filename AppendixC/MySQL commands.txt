@@ -1,0 +1,22 @@
+CREATE DATABASE projava;
+
+USE projava;
+
+CREATE TABLE account (
+        account_id INT8 PRIMARY KEY,
+        customer_name VARCHAR( 40 ),
+        balance FLOAT,
+        cert_serial_number VARCHAR( 255 )
+);
+
+CREATE TABLE credit_card (
+        account_id INT8 PRIMARY KEY,
+        session_key VARCHAR( 255 ),
+        cc_number VARCHAR( 100 )
+);
+
+GRANT ALL PRIVILEGES ON * TO projava@localhost IDENTIFIED BY 'sasquatch';
+
+USE mysql;
+
+DELETE FROM user WHERE Host='localhost' AND User='';

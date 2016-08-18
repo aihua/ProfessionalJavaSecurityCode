@@ -1,0 +1,16 @@
+grant {
+	// Let the JDBC proxy connect to the database
+	// SETUP: change the machine name to that of your database server
+	// SETUP: change to your database's JDBC port number if using something
+	// other than MySQL
+	permission java.net.SocketPermission "localhost:3306", "connect,resolve";
+
+	// Allow a connection to the RMI registry
+	// SETUP: change from localhost if running the registry elsewhere
+	permission java.net.SocketPermission "localhost:1099", "connect,resolve";
+
+	// Allow receiving connections over RMI
+	// SETUP: change from localhost if running the Bank elsewhere
+	permission java.net.SocketPermission "localhost:1024-", "accept,listen,connect,resolve";
+	permission java.net.SocketPermission "192.168.1.101:1024-", "accept, listen, connect, resolve";
+};

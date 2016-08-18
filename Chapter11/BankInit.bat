@@ -1,0 +1,1 @@
+java -Djava.security.policy=BankInit.policy -Djavax.net.ssl.trustStore=bankTrustStore -Djavax.net.ssl.keyStore=bankKeyStore -Djavax.net.ssl.keyStorePassword=theBank -cp Bank.jar;SecureDriverClient.jar ecommerce_example.bank.BankInit config.properties

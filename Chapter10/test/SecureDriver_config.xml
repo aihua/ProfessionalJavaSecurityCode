@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE connectionServer SYSTEM "SecureDriver_config.dtd">
+<connectionServer id="SecureDriver" keystore="trusted" authclient="true">
+  
+
+  <dataSources>
+    <dataSource id="dataSource1" loginRequired="false">
+      <driver>
+        org.gjt.mm.mysql.Driver
+      </driver>
+      <url>
+        jdbc:mysql://localhost/projava
+      </url>
+      <username>
+        projava
+      </username>
+      <password>
+        sasquatch
+      </password>
+      <login>
+        <username>
+          username
+        </username>
+        <password>
+          password
+        </password>
+      </login>
+    </dataSource>
+  </dataSources>
+
+  <!-- Additional configuration info can be included here-->
+  <include>
+    /path/to/config
+  </include>
+
+</connectionServer>

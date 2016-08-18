@@ -1,0 +1,7 @@
+grant {
+	// Let the JDBC proxy connect to the database
+	// SETUP: change the machine name to that of your database server
+	permission java.net.SocketPermission "192.168.1.101:1024-", "connect,resolve";
+	permission java.net.SocketPermission "localhost:1099", "connect,resolve";
+
+};

@@ -1,0 +1,11 @@
+
+grant {
+	// Allow connections to the JDBC proxy RMI object
+	// SETUP: change to IP of the machine running the JDBC proxy
+	permission java.net.SocketPermission "192.168.1.101:1024-", "accept,connect,resolve";
+	
+	// Allow a connection to the local RMI registry to register
+	permission java.net.SocketPermission "localhost:1099", "connect,resolve";
+	
+};
+

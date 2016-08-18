@@ -1,0 +1,1 @@
+java -Djava.security.policy=CreditCardClient.policy -Djavax.net.ssl.trustStore=creditcardTrustStore -Djavax.net.ssl.keyStore=creditcardKeyStore -cp CreditCardClient.jar ecommerce_example.client.CreditCardClient creditcardKeyStore

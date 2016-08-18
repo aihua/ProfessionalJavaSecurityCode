@@ -1,0 +1,43 @@
+// Additional permissions for tomcat.
+// javac
+
+grant codeBase "file:${java.home}/../lib/-" {
+       permission java.security.AllPermission;
+};
+
+
+grant codeBase "file:${java.home}/-" {
+       permission java.security.AllPermission;
+};
+
+// Tomcat gets all permissions
+
+grant codeBase "file:${tomcat.home}/lib/-" {
+       permission java.security.AllPermission;
+};
+
+grant codeBase "file:${tomcat.home}/classes/-" {
+  permission java.security.AllPermission;
+};
+
+// Bankapp webapp policy 
+
+grant codeBase "file:${tomcat.home}/webapps/bankapp/-" {
+
+  // Need permission to read the class files
+
+  permission java.io.FilePermission "${tomcat.home}${/}webapps${/}bankapp${/}WEB-INF${/}classes", "read";
+  permission java.io.FilePermission "${tomcat.home}${/}webapps${/}bankapp${/}WEB-INF${/}classes${/}-", "read";
+
+  // allows servlets to connect to the RMI Bank object
+  // SETUP: replace the IP and name with the machine the bank runs on
+
+  permission java.net.SocketPermission "localhost:1024-", "connect,resolve";
+  permission java.net.SocketPermission "192.168.10.117:1024-", "connect,resolve";
+  
+  // Permissions needed for standard webapps
+
+  permission ja.net.SocketPermission "localhost:1024-", "listen";
+  permission java.net.SocketPermission "127.0.0.1:1024-", "connect,resolve";
+  permission java.util.PropertyPermission "*", "read";
+};

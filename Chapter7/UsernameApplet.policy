@@ -1,0 +1,5 @@
+// Grant code in /test_code/ the ability to read the username.
+
+grant codeBase "file:${/}test_code${/}*" {
+	permission java.util.PropertyPermission "user.name", "read";
+};

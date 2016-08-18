@@ -1,0 +1,10 @@
+keystore "file:${user.home}${/}.keystore";
+
+// Grant code signed by examplesigningkey 
+// the ability to write to the file log.txt
+// in the user's home directory
+
+grant signedBy "examplesigningkey" {
+	permission java.io.FilePermission "${user.home}${/}log.txt", "write";
+	permission java.util.PropertyPermission "user.home", "read";
+};

@@ -1,0 +1,6 @@
+// Grant code in c:\test_code ability to read and write to a file "test.txt"
+
+grant codeBase "file:${/}test_code${/}*" {
+  permission java.io.FilePermission "${/}test_code${/}test.txt", "read, write,
+             delete";
+};

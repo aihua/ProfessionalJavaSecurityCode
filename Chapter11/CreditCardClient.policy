@@ -1,0 +1,9 @@
+grant {
+
+	// Permission to connect to the RMI server.
+	// SETUP: Replace the IP address with the bank's IP.
+	permission java.net.SocketPermission "127.0.0.1:1024-", "connect,resolve";
+	
+	// SETUP: Replace the name with the name of the bank server.
+	permission java.net.SocketPermission "localhost", "resolve";
+};

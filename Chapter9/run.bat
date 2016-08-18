@@ -1,0 +1,1 @@
+java -Djava.security.manager -Djava.security.auth.login.config==jaas.config -Djava.security.policy=example.policy JAASAuthorizationExample testuser sasquatch

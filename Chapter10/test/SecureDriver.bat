@@ -1,0 +1,1 @@
+java -Djava.security.policy=SecureDriver.policy -Djavax.net.ssl.trustStore=databaseKeyStore -Djavax.net.ssl.keyStore=databaseKeyStore -Djavax.net.ssl.keyStorePassword=database -cp mysql_comp.jar;SecureDriver.jar;xerces.jar com.isnetworks.crypto.database.server.SecureConnectionServerMain SecureDriver_config.xml
