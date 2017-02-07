@@ -280,10 +280,10 @@ public class FileEncryptorRSA {
 
     // Create a PBE key and cipher.
     PBEKeySpec keySpec = new PBEKeySpec(password);
-    SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithSHAAndTwofish-CBC");
+    SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWITHSHA1ANDRC2_40");
     SecretKey key = keyFactory.generateSecret(keySpec);
     PBEParameterSpec paramSpec = new PBEParameterSpec(salt, ITERATIONS);
-    Cipher cipher = Cipher.getInstance("PBEWithSHAAndTwofish-CBC");
+    Cipher cipher = Cipher.getInstance("PBEWITHSHA1ANDRC2_40");
     cipher.init(Cipher.ENCRYPT_MODE, key, paramSpec);
 
     // Encrypt the array
@@ -313,10 +313,10 @@ public class FileEncryptorRSA {
 
     // Create a PBE cipher to decrypt the byte array.
     PBEKeySpec keySpec = new PBEKeySpec(password);
-    SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithSHAAndTwofish-CBC");
+    SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWITHSHA1ANDRC2_40");
     SecretKey key = keyFactory.generateSecret(keySpec);
     PBEParameterSpec paramSpec = new PBEParameterSpec(salt, ITERATIONS);
-    Cipher cipher = Cipher.getInstance("PBEWithSHAAndTwofish-CBC");
+    Cipher cipher = Cipher.getInstance("PBEWITHSHA1ANDRC2_40");
 
     // Perform the actual decryption.
     cipher.init(Cipher.DECRYPT_MODE, key, paramSpec);
