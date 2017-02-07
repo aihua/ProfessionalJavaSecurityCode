@@ -55,6 +55,7 @@ public class FileEncryptor
 
     // Create a Rijndael key
     KeyGenerator keyGenerator = KeyGenerator.getInstance("Rijndael");
+    //must be equal to 128, 192 or 256
     keyGenerator.init(256);
     Key key = keyGenerator.generateKey();
 
