@@ -4,6 +4,11 @@ import javax.crypto.spec.*;
 import java.io.*;
 
 /**
+
+解决java.security.InvalidKeyException Illegal key size问题
+1、到以下网址：http://www.oracle.com/technetwork/java/javase/downloads/index.html下载Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 6得到包jce_policy-6.zip
+2、解决jce_policy-6.zip将里面的local_policy.jar和US_export_policy.jar复制并覆盖%JAVA_HOME%/jre/lib/security下的local_policy.jar和US_export_policy.jar
+
  *	This class encrypts and decrypts a file using CipherStreams
  *	and a 256-bit Rijndael key stored in the filesystem.
  */
